@@ -18,7 +18,7 @@ export default function SideBar() {
 
                 <li className="border-l-2 border-transparent">
                     <Link
-                        href="./experiences"
+                        href="./experience"
                         className="flex items-center px-3 py-4 cursor-pointer">
                         <VscBriefcase size={ICON_SIZE} color={ICON_DEFAULT_COLORS} />
                     </Link>
@@ -49,19 +49,23 @@ export default function SideBar() {
                 </li>
             </div>
 
-            <ul>
-                <li className="p-3">
-                    <Link href="">
-                        <VscAccount size={ICON_SIZE} />
+            <div>
+                <li className="border-l-2 border-transparent">
+                    <Link
+                        href="./about"
+                        className="flex items-center px-3 py-4 cursor-pointer">
+                        <VscAccount size={ICON_SIZE} color={ICON_DEFAULT_COLORS} />
                     </Link>
                 </li>
 
-                <li className="p-3">
-                    <Link href="">
-                        <VscSettings size={ICON_SIZE} />
+                <li className="border-l-2 border-transparent">
+                    <Link
+                        href="./settings"
+                        className="flex items-center px-3 py-4 cursor-pointer">
+                        <VscSettings size={ICON_SIZE} color={ICON_DEFAULT_COLORS} />
                     </Link>
                 </li>
-            </ul>
+            </div>
         </aside>
     )
 }

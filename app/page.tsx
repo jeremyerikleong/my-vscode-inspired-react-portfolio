@@ -1,29 +1,10 @@
-import { developerInfo } from '@/constants';
-import Link from 'next/link';
-import TitleBar from './components/TitleBar';
-
-export async function generateMetadata() {
-  return {
-    title: `${developerInfo.name} | Home`
-  }
-}
+import Hero from './components/Hero';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <main className="flex flex-col min-h-screen w-full">
-        <TitleBar />
-        <div className="">
-          <h1>{developerInfo.name}</h1>
-          <h2>{developerInfo.title}</h2>
-          <p>{developerInfo.bio}</p>
-        </div>
-
-        <div className="w-[120px] bg-blue-500 p-2 rounded-md">
-          <Link href="./projects">
-            View Projects
-          </Link>
-        </div>
+    <div className="flex flex-col h-[calc(100vh-30px-30px)] items-center justify-center">
+      <main className="flex flex-col w-full px-5">
+        <Hero />
       </main>
     </div>
   );

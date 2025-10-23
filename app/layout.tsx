@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import TitleBar from './components/TitleBar';
+import SideBar from "./components/SideBar";
+import PrimarySideBar from './components/PrimarySideBar';
+import Footer from './components/Footer';
 
 const inter = Inter({
   variable: "--inter",
@@ -22,7 +26,17 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
-        {children}
+        <TitleBar />
+
+        <div className="flex flex-1 overflow-hidden">
+          <SideBar />
+          <PrimarySideBar />
+          <main className="flex-1 overflow-y-auto">
+            {children}
+          </main>
+        </div>
+
+        <Footer />
       </body>
     </html>
   );

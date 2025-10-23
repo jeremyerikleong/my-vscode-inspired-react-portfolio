@@ -1,0 +1,27 @@
+
+import { developerInfo } from '@/constants';
+import Link from 'next/link';
+
+export async function generateMetadata() {
+    return {
+        title: `${developerInfo.name} | Home`
+    }
+}
+
+export default function Hero() {
+    return (
+        <section className="flex flex-col">
+            <div className="">
+                <h1>{developerInfo.name}</h1>
+                <h2>{developerInfo.title}</h2>
+                <p>{developerInfo.bio}</p>
+            </div>
+
+            <div className="w-[120px] bg-blue-500 p-2 rounded-md">
+                <Link href="./projects">
+                    View Projects
+                </Link>
+            </div>
+        </section>
+    )
+}
