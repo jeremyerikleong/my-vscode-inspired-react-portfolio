@@ -1,5 +1,6 @@
 import { developerInfo } from '@/constants';
 import Link from 'next/link';
+import TitleBar from './components/TitleBar';
 
 export async function generateMetadata() {
   return {
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center">
       <main className="flex flex-col min-h-screen w-full">
+        <TitleBar />
         <div className="">
           <h1>{developerInfo.name}</h1>
           <h2>{developerInfo.title}</h2>
