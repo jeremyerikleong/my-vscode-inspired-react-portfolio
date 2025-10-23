@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { developerInfo } from '@/constants';
 import { VscLayoutSidebarLeftOff, VscLayoutSidebarLeft, VscLayoutPanelOff, VscLayoutPanel, VscLayoutSidebarRightOff, VscLayoutSidebarRight } from 'react-icons/vsc';
@@ -13,15 +13,15 @@ const titleBarIconToolTip = {
     secondarySideBar: 'Toggle Secondary Side Bar (⌥⌘B)',
 }
 
-export default function TitleBar() {
+interface TitleBarProps {
+    showPrimarySideBar: boolean;
+    togglePrimarySideBar: () => void;
+}
+
+export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar }: TitleBarProps) {
     const ICON_SIZE = 18;
-    const [togglePrimarySideBar, setTogglePrimarySideBar] = useState(false);
     const [togglePanel, setTogglePanel] = useState(false);
     const [toggleSecondarySideBar, setToggleSecondarySideBar] = useState(false);
-
-    function handleTogglePrimarySideBar() {
-        setTogglePrimarySideBar(prev => !prev);
-    }
 
     function handleTogglePanel() {
         setTogglePanel(prev => !prev);
@@ -33,7 +33,7 @@ export default function TitleBar() {
 
     useHotkeys('meta+b,ctrl+b', (evt) => {
         evt.preventDefault();
-        handleTogglePrimarySideBar();
+        togglePrimarySideBar();
     });
 
     useHotkeys('meta+j,ctrl+j', (evt) => {
@@ -61,8 +61,8 @@ export default function TitleBar() {
             </p>
 
             <ul className="flex gap-2">
-                <li className="cursor-pointer" onClick={handleTogglePrimarySideBar}>
-                    {togglePrimarySideBar ?
+                <li className="cursor-pointer" onClick={togglePrimarySideBar}>
+                    {showPrimarySideBar ?
                         (<Tooltip text={titleBarIconToolTip.primarySideBar}>
                             <VscLayoutSidebarLeft size={ICON_SIZE} />
                         </Tooltip>) :
