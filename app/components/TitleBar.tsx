@@ -1,7 +1,5 @@
-
 'use client';
 
-import { useState } from 'react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { developerInfo } from '@/constants';
 import { VscLayoutSidebarLeftOff, VscLayoutSidebarLeft, VscLayoutPanelOff, VscLayoutPanel, VscLayoutSidebarRightOff, VscLayoutSidebarRight } from 'react-icons/vsc';
@@ -16,20 +14,14 @@ const titleBarIconToolTip = {
 interface TitleBarProps {
     showPrimarySideBar: boolean;
     togglePrimarySideBar: () => void;
+    showSecondarySideBar: boolean;
+    toggleSecondarySideBar: () => void;
+    showPanel: boolean;
+    togglePanel: () => void;
 }
 
-export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar }: TitleBarProps) {
+export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar, showSecondarySideBar, toggleSecondarySideBar, showPanel, togglePanel }: TitleBarProps) {
     const ICON_SIZE = 18;
-    const [togglePanel, setTogglePanel] = useState(false);
-    const [toggleSecondarySideBar, setToggleSecondarySideBar] = useState(false);
-
-    function handleTogglePanel() {
-        setTogglePanel(prev => !prev);
-    }
-
-    function handleToggleSecondarySideBar() {
-        setToggleSecondarySideBar(prev => !prev);
-    }
 
     useHotkeys('meta+b,ctrl+b', (evt) => {
         evt.preventDefault();
@@ -38,12 +30,12 @@ export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar }: T
 
     useHotkeys('meta+j,ctrl+j', (evt) => {
         evt.preventDefault();
-        handleTogglePanel();
+        togglePanel();
     });
 
     useHotkeys('meta+alt+b,ctrl+alt+b', (evt) => {
         evt.preventDefault();
-        handleToggleSecondarySideBar();
+        toggleSecondarySideBar();
     });
 
     return (
@@ -71,8 +63,8 @@ export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar }: T
                         </Tooltip>)}
                 </li>
 
-                <li className="cursor-pointer" onClick={handleTogglePanel}>
-                    {togglePanel ?
+                <li className="cursor-pointer" onClick={togglePanel}>
+                    {showPanel ?
                         (<Tooltip text={titleBarIconToolTip.panel}>
                             <VscLayoutPanel size={ICON_SIZE} />
                         </Tooltip>) :
@@ -81,8 +73,8 @@ export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar }: T
                         </Tooltip>)}
                 </li>
 
-                <li className="cursor-pointer" onClick={handleToggleSecondarySideBar}>
-                    {toggleSecondarySideBar ?
+                <li className="cursor-pointer" onClick={toggleSecondarySideBar}>
+                    {showSecondarySideBar ?
                         <Tooltip text={titleBarIconToolTip.secondarySideBar}>
                             <VscLayoutSidebarRight size={ICON_SIZE} />
                         </Tooltip> :
