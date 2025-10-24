@@ -48,3 +48,54 @@ export const socialCardDetails = [
         url: 'https://x.com/JeremyErikLeong'
     },
 ]
+
+export const myProjects = [
+    {
+        id: '1',
+        title: 'BMI Calculator App',
+        description: 'A simple Body Mass Index (BMI) calculator.',
+        url: 'https://github.com/jeremyerikleong/react-native-bmi-calculator-app',
+        icon: '/projects/bmi.webp',
+        tech_stacks: ['React Native', 'TypeScript', 'EAS'],
+    },
+    {
+        id: '2',
+        title: 'Music Player',
+        description: 'A music player developed using vanilla JavaScript.',
+        url: 'https://jeremyerikleong.github.io/music-player',
+        icon: '/projects/music-player.webp',
+        tech_stacks: ['HTML', 'SCSS', 'JavaScript', 'Github Page'],
+    },
+    {
+        id: '3',
+        title: 'My Next.js CV',
+        description: 'My second cv, developed using a modern framework.',
+        url: 'https://cv.jeremyerikleong.com',
+        icon: '/projects/jeremy.webp',
+        tech_stacks: ['Next.js', 'Tailwind CSS', 'Netlify'],
+    },
+    {
+        id: '4',
+        title: 'Recipe App',
+        description: 'A recipe web app designed for home chefs and foodies, with easy, tasty homemade recipes.',
+        url: 'https://recipe-app-two-ebon.vercel.app',
+        icon: '/projects/chef.webp',
+        tech_stacks: ['React.js', 'Tailwind CSS', 'Vercel'],
+    },
+    {
+        id: '5',
+        title: 'The Boring Devs',
+        description: 'A client website developed using Next.js framework.',
+        url: 'https://www.theboringdevs.com',
+        icon: '/projects/tbd.webp',
+        tech_stacks: ['Next.js', 'Tailwind CSS', 'Vercel'],
+    },
+    {
+        id: '6',
+        title: 'Wordle JS',
+        description: 'A mini word guessing game developed using Vanilla JavaScript.',
+        url: 'https://simple-wordle-js.netlify.app',
+        icon: '/projects/wordle.webp',
+        tech_stacks: ['HTML', 'SCSS', 'JavaScript', 'Netlify'],
+    },
+]
