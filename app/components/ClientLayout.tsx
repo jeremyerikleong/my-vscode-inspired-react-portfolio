@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import TitleBar from './TitleBar';
 import SideBar from './SideBar';
+import TabsBar from './TabsBar';
 import PrimarySideBar from './PrimarySideBar';
 import SecondarySideBar from './SecondarySideBar';
 import Panel from './Panel';
@@ -29,6 +30,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                 {showPrimarySideBar && <PrimarySideBar />}
 
                 <div className="relative flex-1 overflow-hidden">
+                    <TabsBar />
                     <main className="flex-1 overflow-y-auto">
                         {children}
                     </main>
