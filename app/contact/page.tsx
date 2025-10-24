@@ -8,7 +8,7 @@ export async function generateMetadata() {
 
 export default function Contact() {
     return (
-        <section className="p-10 max-w-[900px] mx-auto font-mono text-sm text-gray-200">
+        <section className="py-10 px-6 max-w-[900px] mx-auto font-mono text-sm text-gray-200">
             <div className="text-center mb-10">
                 <h1 className="text-3xl lg:text-4xl font-bold">Get In Touch</h1>
                 <h2 className="font-medium mt-3">
@@ -26,7 +26,7 @@ export default function Contact() {
                     <span className="w-3 h-3 rounded-full bg-green-500"></span>
                 </div>
 
-                <div className="flex bg-[#2e3440]">
+                <div className="flex bg-[#2e3440] max-h-[60vh] overflow-y-auto">
                     <div className="flex flex-col items-end px-3 py-4 bg-[#2a2f3a] text-gray-500 select-none">
                         <span>1</span>
                         {socialCardDetails.map((_, index) => (
@@ -35,7 +35,7 @@ export default function Contact() {
                         <span>{socialCardDetails.length + 2}</span>
                     </div>
 
-                    <div className="px-4 py-4">
+                    <div className="px-4 py-4 overflow-y-auto">
                         <p>
                             <span className="text-purple-400">export const </span>
                             <span className="text-amber-300">socials</span>
@@ -45,7 +45,7 @@ export default function Contact() {
 
                         <ul className="mt-1">
                             {socialCardDetails.map((social) => (
-                                <li key={social.id} className="ml-6">
+                                <li key={social.id} className="ml-6 break-all">
                                     <span className="text-red-400">{social.platform}: </span>
                                     <a
                                         href={social.url}

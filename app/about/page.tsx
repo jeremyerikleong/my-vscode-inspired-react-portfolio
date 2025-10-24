@@ -14,7 +14,7 @@ export default function About() {
                 <h2 className="font-medium my-3">{developerInfo.title}</h2>
             </div>
 
-            <div className="text-justify my-20">
+            <div className="text-justify mt-20">
                 <p className="my-4">
                     Hey! My name is Jeremy. I&apos;m a front-end developer based in Malaysia.
                 </p>

@@ -5,7 +5,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="flex justify-between items-center bg-gray-700 w-full h-[25px] p-2">
+        <footer className="flex justify-between items-center bg-gray-700 w-full h-[25px] p-2 border-t border-t-gray-600">
             <div className="flex items-center gap-4 text-xs">
                 <div className="flex items-center">
                     <VscSourceControl size={ICON_SIZES} />
