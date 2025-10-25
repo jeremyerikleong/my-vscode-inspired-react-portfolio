@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const token = process.env.NEXT_PUBLIC_GH_TKN;
-  const username = process.env.NEXT_PUBLIC_GH_USER;
+  const token = process.env.GH_API_AUTH;
+  const username = process.env.GH_USER;
 
   const query = `
     query {
