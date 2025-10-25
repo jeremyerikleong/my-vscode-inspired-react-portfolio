@@ -1,4 +1,5 @@
 import { developerInfo, socialCardDetails } from '@/constants';
+import SectionTitle from '../components/SectionTitle';
 
 export async function generateMetadata() {
     return {
@@ -8,16 +9,11 @@ export async function generateMetadata() {
 
 export default function Contact() {
     return (
-        <section className="py-10 px-6 max-w-[900px] mx-auto font-mono text-sm text-gray-200">
-            <div className="text-center mb-10">
-                <h1 className="text-3xl lg:text-4xl font-bold">Get In Touch</h1>
-                <h2 className="font-medium mt-3">
-                    Have an exciting project we could work on together?
-                </h2>
-                <h2 className="font-medium mt-2">
-                    Feel free to reach out to me through any of the social platforms below. I’m always open to new opportunities and connections.
-                </h2>
-            </div>
+        <section className="py-10 px-6 max-w-[900px] mx-auto font-mono text-gray-200">
+            <SectionTitle
+                title="Get In Touch"
+                description1="Have an exciting project we could work on together?"
+                description2="Feel free to reach out to me through any of the social platforms below. I’m always open to new opportunities and connections." />
 
             <div className="relative mt-10 rounded-md overflow-hidden border border-gray-700 shadow-lg">
                 <div className="flex items-center gap-2 px-3 py-2 bg-[#1f2430] border-b border-gray-700">

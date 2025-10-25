@@ -12,10 +12,10 @@ export default function Projects() {
         <section className="py-10 px-6 max-w-[900px] font-mono mx-auto">
             <div className="text-center">
                 <h1 className="text-3xl lg:text-4xl font-bold">My Projects</h1>
-                <h2 className="font-medium my-3">Here&apos;s a selection of my creations for brushing up my skills. For more stuff, kindly check out my <a className="text-blue-400" href="https://github.com/jeremyerikleong" target="_blank">repositories.</a></h2>
+                <h3 className="font-medium my-3">Here&apos;s a selection of my creations for brushing up my skills. For more stuff, kindly check out my <a className="text-blue-400" href="https://github.com/jeremyerikleong" target="_blank">repositories</a>.</h3>
             </div>
 
-            <div className="mt-20">
+            <div className="mt-10">
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {myProjects && myProjects.map(project => (
                         <a key={project.id} href={project.url} target="_blank" className="h-full">
