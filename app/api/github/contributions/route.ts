@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   const query = `
     query {
-      user(login: "${process.env.GH_USER}") {
+      user(login: "${process.env.APP_VAR_A}") {
         contributionsCollection {
           contributionCalendar {
             totalContributions
@@ -23,7 +23,7 @@ export async function GET() {
   const res = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
-      Authorization: `bearer ${process.env.GH_API_AUTH}`,
+      Authorization: `bearer ${process.env.APP_VAR_B}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ query }),

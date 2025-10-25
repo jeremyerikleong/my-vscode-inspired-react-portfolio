@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-    const username = process.env.GH_USER;
+    const username = process.env.APP_VAR_A;
     const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`, {
         headers: {
-            Authorization: `token ${process.env.GH_API_AUTH}`,
+            Authorization: `token ${process.env.APP_VAR_B}`,
             "Content-Type": "application/json",
         },
         next: { revalidate: 3600 },
