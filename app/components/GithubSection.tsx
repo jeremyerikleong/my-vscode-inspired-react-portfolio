@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { VscStarEmpty, VscRepoForked } from 'react-icons/vsc';
-
+import SectionTitle from './SectionTitle';
 interface Repository {
     id: string;
     name: string;
@@ -80,10 +80,10 @@ export default function GithubSection() {
 
     return (
         <section className="max-w-[900px] mx-auto px-6 py-10 text-gray-200 font-mono">
-            <div className="text-center">
-                <h1 className="text-3xl lg:text-4xl font-bold">Github</h1>
-                <h3 className="font-medium my-3">Feel free to browse through my GitHub repositories to see what I’ve been working on. Here are some of my public projects that showcase my skills and interests.</h3>
-            </div>
+            <SectionTitle
+                title="Github"
+                description1="Feel free to browse through my GitHub repositories to see what I’ve been working on. Here are some of my public projects that showcase my skills and interests."
+            />
 
             <div className="my-10">
                 <h2 className="font-bold text-lg">Pinned</h2>
@@ -141,37 +141,38 @@ export default function GithubSection() {
                 )}
             </div>
 
-            <div className="overflow-x-auto">
+            <>
                 <h2 className="font-bold text-lg">Contribution Activity</h2>
-
                 {isLoadingContributions ? (
                     <>
                         <div className="w-full h-26 my-2 animate-pulse bg-[#2e3440]"></div>
-                        <div className="w-60 h-4 animate-pulse bg-[#2e3440]"></div>
+                        <div className="w-full lg:w-60 h-4 animate-pulse bg-[#2e3440]"></div>
                     </>
                 ) : (
                     <>
-                        <div className="flex gap-1 my-2">
-                            {calendar.map((week, i) => (
-                                <div key={i} className="flex flex-col gap-1">
-                                    {week.contributionDays.map((day, j) => (
-                                        <div
-                                            key={j}
-                                            className="w-3 h-3 rounded-xs"
-                                            title={`${day.date}: ${day.contributionCount} contributions`}
-                                            style={{
-                                                backgroundColor: day.color,
-                                                filter: "brightness(0.7) contrast(1.2)",
-                                            }}
-                                        ></div>
-                                    ))}
-                                </div>
-                            ))}
+                        <div className="overflow-x-auto">
+                            <div className="flex gap-1 my-2">
+                                {calendar.map((week, i) => (
+                                    <div key={i} className="flex flex-col gap-1">
+                                        {week.contributionDays.map((day, j) => (
+                                            <div
+                                                key={j}
+                                                className="w-3 h-3 rounded-xs"
+                                                title={`${day.date}: ${day.contributionCount} contributions`}
+                                                style={{
+                                                    backgroundColor: day.color,
+                                                    filter: "brightness(0.7) contrast(1.2)",
+                                                }}
+                                            ></div>
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                         <p className="text-xs">{totalContributions} contributions in the last year</p>
                     </>
                 )}
-            </div>
+            </>
         </section>
     );
 }
