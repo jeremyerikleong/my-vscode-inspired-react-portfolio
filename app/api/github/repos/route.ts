@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-    const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
+    const username = process.env.NEXT_PUBLIC_GH_USER;
     const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`, {
         headers: {
-            Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+            Authorization: `token ${process.env.NEXT_PUBLIC_GH_TKN}`,
             "Content-Type": "application/json",
         },
         next: { revalidate: 3600 },

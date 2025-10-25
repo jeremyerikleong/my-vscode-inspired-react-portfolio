@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
-  const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
+  const token = process.env.NEXT_PUBLIC_GH_TKN;
+  const username = process.env.NEXT_PUBLIC_GH_USER;
 
   const query = `
     query {
