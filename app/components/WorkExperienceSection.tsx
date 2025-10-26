@@ -1,5 +1,6 @@
 import { workExperiences } from '@/constants';
 import SectionTitle from './SectionTitle';
+import Button from './Button';
 
 export default function WorkExperienceSection() {
     return (
@@ -25,8 +26,8 @@ export default function WorkExperienceSection() {
                         {workExperience.experience_content}
                     </p>
                     <ul className="text-xs flex flex-wrap gap-3">
-                        {workExperience.experience_tech_stacks.map(tech_stack => (
-                            <li key={`${workExperience.id}TechStack`}
+                        {workExperience.experience_tech_stacks.map((tech_stack, index) => (
+                            <li key={`${workExperience.id}TechStack${index}`}
                                 className="bg-gray-600 px-2 py-1 rounded-sm">
                                 {tech_stack}
                             </li>
@@ -36,12 +37,11 @@ export default function WorkExperienceSection() {
             ))}
 
             <div className="flex justify-center my-6">
-                <a href="https://cv.jeremyerikleong.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="size-fit bg-blue-500 px-2 p-4 rounded-md text-sm">
-                    View Full Resume
-                </a>
+                <Button
+                    title="View Full Resume"
+                    href="https://cv.jeremyerikleong.com/"
+                    external
+                />
             </div>
         </section>
     )
