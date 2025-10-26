@@ -120,3 +120,24 @@ export const themes = [
         theme_creator: 'Jeremy Erik Leong',
     },
 ]
+
+export const workExperiences = [
+    {
+        id: 'e1',
+        position_duration: 'July 2022 - September 2024',
+        position_title: 'Front-End Web Developer',
+        company_name: 'TTwoWeb',
+        company_website: 'https://www.ttwoweb.com/',
+        experience_content: 'Develop responsive websites and implement back-end integration via RESTful APIs. Collaborate with cross-functional teams, including developers, designers, and project executives, to implement and advocate for best practices in web accessibility.',
+        experience_tech_stacks: ['HTML', 'CSS', 'PHP', 'jQuery', 'Bootstrap', 'Vue.js', 'Vuetify']
+    },
+    {
+        id: 'e2',
+        position_duration: 'August 2019 - March 2021',
+        position_title: 'Interactive Content Developer',
+        company_name: 'MindSpace',
+        company_website: 'https://www.mindspace.my/',
+        experience_content: 'Primarily responsible for creating company social media posts using Adobe tools, maintaining in-house website content through Grav CMS, and independently developing internal gamification education content for special needs using Unity3D.',
+        experience_tech_stacks: ['HTML', 'CSS', 'C#', 'Adobe Photoshop', 'Adobe Illustrator', 'Blender', 'Unity 3D']
+    },
+]
