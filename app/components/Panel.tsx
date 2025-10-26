@@ -1,5 +1,6 @@
 import { VscChromeClose, VscArrowSmallRight, VscSymbolEvent } from 'react-icons/vsc';
 import { useState } from 'react';
+import Button from './Button';
 
 interface PanelProps {
     showPanel: boolean;
@@ -53,11 +54,13 @@ export default function Panel({ showPanel, onClose }: PanelProps) {
                     ))}
                 </ul>
 
-                <button
+                <Button
+                    title=""
                     onClick={onClose}
-                    className="cursor-pointer text-gray-400 hover:text-white transition">
+                    className="cursor-pointer text-gray-400 hover:bg-transparent hover:text-white transition"
+                >
                     <VscChromeClose size={ICON_SIZES} />
-                </button>
+                </Button>
             </div>
 
             <div className="mt-3 mx-2 text-sm text-gray-200 font-medium">

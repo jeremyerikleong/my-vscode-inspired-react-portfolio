@@ -1,6 +1,6 @@
 
 import { developerInfo } from '@/constants';
-import Link from 'next/link';
+import Button from './Button';
 
 export async function generateMetadata() {
     return {
@@ -18,12 +18,7 @@ export default function Hero() {
                 <p className="text-gray-400">{developerInfo.bio}</p>
             </div>
 
-
-            <Link href="./projects" className="cursor-pointer">
-                <div className="size-fit bg-blue-500 px-2 p-4 rounded-md my-6 text-sm">
-                    View Projects
-                </div>
-            </Link>
+            <Button title="View Projects" href="./projects" className="w-fit my-6" />
         </section>
     )
 }

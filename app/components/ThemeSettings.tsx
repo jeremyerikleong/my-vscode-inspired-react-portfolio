@@ -3,6 +3,7 @@
 import SectionTitle from '../components/SectionTitle';
 import { themes } from '@/constants';
 import Image from 'next/image';
+import Button from './Button';
 
 export default function ThemeSettings() {
     return (
@@ -30,9 +31,10 @@ export default function ThemeSettings() {
                             </h3>
                         </div>
 
-                        <button className="cursor-pointer p-2 bg-gray-600 rounded-sm" onClick={() => console.log('set theme:', `${theme.theme_name}`)}>
-                            set color theme
-                        </button>
+                        <Button
+                            title="Set Color Theme"
+                            onClick={() => console.log('set theme:', `${theme.theme_name}`)}
+                        />
                     </li>
                 ))}
             </ul>
