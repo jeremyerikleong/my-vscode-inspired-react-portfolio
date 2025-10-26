@@ -99,3 +99,24 @@ export const myProjects = [
         tech_stacks: ['HTML', 'SCSS', 'JavaScript', 'Netlify'],
     },
 ]
+
+export const themes = [
+    {
+        theme_id: '1',
+        theme_name: 'One Dark Pro',
+        theme_icon: '/themes/one-dark-pro.png',
+        theme_creator: 'Binaryify',
+    },
+    {
+        theme_id: '2',
+        theme_name: 'Dracula',
+        theme_icon: '/themes/dracula.png',
+        theme_creator: 'Dracula Theme',
+    },
+    {
+        theme_id: '3',
+        theme_name: 'Cyberpunk Light Aquamarine Theme',
+        theme_icon: '/themes/cyberpunk-aquamarine.png',
+        theme_creator: 'Jeremy Erik Leong',
+    },
+]
