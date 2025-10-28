@@ -39,13 +39,13 @@ export default function SideBar() {
 
     return (
         <aside className="flex flex-col items-center justify-between min-h-[calc(100vh-60px)] w-fit py-4 bg-gray-800">
-            <div>
+            <ul>
                 {topLinks.map((link) => renderButton(link.id, link.href, link.icon))}
-            </div>
+            </ul>
 
-            <div>
+            <ul>
                 {bottomLinks.map((link) => renderButton(link.id, link.href, link.icon))}
-            </div>
+            </ul>
         </aside>
     )
 }

@@ -9,11 +9,13 @@ import SecondarySideBar from './SecondarySideBar';
 import Panel from './Panel';
 import Footer from './Footer';
 import { isMobile } from 'react-device-detect';
+import { usePathname } from 'next/navigation';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
     const [showPrimarySideBar, setShowPrimarySideBar] = useState(() => !isMobile);
     const [showSecondarySideBar, setShowSecondarySideBar] = useState(false);
     const [showPanel, setShowPanel] = useState(false);
+    const pathname = usePathname();
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -28,7 +30,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
             <div className="flex flex-1 overflow-hidden">
                 <SideBar />
-                {showPrimarySideBar && <PrimarySideBar />}
+                {showPrimarySideBar && <PrimarySideBar activeTab={pathname} />}
 
                 <div className="relative flex-1 overflow-hidden">
                     <TabsBar />
