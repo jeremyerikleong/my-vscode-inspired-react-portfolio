@@ -9,7 +9,7 @@ interface PrimarySideBarProps {
 
 export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
     const [files, setFiles] = useState<FileStructureProps[]>(getFileStructures(activeTab));
-    const [selectedFile, setSelectedFile] = useState<PrimarySideBarProps | null>(null);
+    const [selectedFile, setSelectedFile] = useState<FileStructureProps | null>(null);
 
     useEffect(() => {
         startTransition(() => {
@@ -18,17 +18,39 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
         });
     }, [activeTab]);
 
-    function handleFileSelect(file: PrimarySideBarProps) {
+    function handleFileSelect(file: FileStructureProps) {
         setSelectedFile(file);
+    }
+
+    function toggleFolder(selectedItem: FileStructureProps) {
+        function updateFiles(items: FileStructureProps[]): FileStructureProps[] {
+            return items.map(item => {
+                if (item === selectedItem) {
+                    return { ...item, isOpened: !item.isOpened }
+                }
+
+                if (item.children) {
+                    return { ...item, children: updateFiles(item.children) }
+                }
+                return item;
+            })
+        }
+        setFiles(updateFiles(files));
     }
 
     return (
         <div className="w-50 min-h-[calc(100vh-60px)] bg-gray-700 p-2 border-r border-gray-600">
-            <h3 className="uppercase text-xs font-medium">
+            <h3 className="uppercase text-xs font-medium px-3 mb-3">
                 Explorer
             </h3>
             <div>{files.map(file => (
-                <FileTreeStructure />
+                <FileTreeStructure
+                    key={file.name}
+                    item={file}
+                    level={0}
+                    onSelect={handleFileSelect}
+                    onToggle={toggleFolder}
+                    selectedFile={selectedFile} />
             ))}</div>
         </div>
     )
