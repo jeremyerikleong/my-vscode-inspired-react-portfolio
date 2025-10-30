@@ -7,8 +7,9 @@ const tabs = [
     { id: '2', title: 'about', path: '/about', extension: 'tsx', icon: '/react.png' },
     { id: '3', title: 'experience', path: '/experience', extension: 'tsx', icon: '/react.png' },
     { id: '4', title: 'projects', path: '/projects', extension: 'tsx', icon: '/react.png' },
-    { id: '5', title: 'github', path: '/github', extension: 'md', icon: '/md.png' },
+    { id: '5', title: 'github', path: '/github', extension: 'tsx', icon: '/react.png' },
     { id: '6', title: 'contact', path: '/contact', extension: 'tsx', icon: '/react.png' },
+    { id: '7', title: 'settings', path: '/settings', extension: '', icon: '/gear2.png' },
 ]
 
 export default function TabsBar() {
@@ -27,7 +28,7 @@ export default function TabsBar() {
                             height={16}
                             alt="icon"
                         />
-                        {tab.title}.{tab.extension}
+                        {tab.title}{tab.extension !== "" ? '.' : ''}{tab.extension}
                     </li>
                 </Link>
             ))
