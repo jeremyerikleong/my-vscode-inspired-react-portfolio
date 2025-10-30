@@ -79,58 +79,58 @@ export default function GithubSection() {
     }, []);
 
     return (
-        <section className="max-w-[900px] mx-auto px-6 py-10 text-gray-200 font-mono">
+        <section className="layout-container">
             <SectionTitle
                 title="Github"
                 description1="Feel free to browse through my GitHub repositories to see what I’ve been working on. Here are some of my public projects that showcase my skills and interests."
             />
 
-            <div className="my-10">
-                <h2 className="font-bold text-lg">Pinned</h2>
+            <div className="content-wrapper">
+                <h2 className="card-title">Pinned</h2>
 
                 {isLoadingPinnedRepos ? (
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 my-2">
+                    <div className="card-grid">
                         {isLoadingPinnedRepos && [...Array(6)].map((_, index) => (
-                            <div key={index} className="w-full h-50 skeleton bg-[#2e3440] border border-gray-600 rounded-md animate-pulse"></div>
+                            <div key={index} className="skeleton-anim"></div>
                         ))}
                     </div>
                 ) : (
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 my-2">
+                    <div className="card-grid">
                         {pinnedRepos.map((repo) => (
                             <a
                                 key={repo.id}
                                 href={repo.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-[#2e3440] border border-gray-600 hover:border-gray-400 rounded-md p-5 transition duration-300 flex flex-col justify-between"
+                                className="project-card"
                             >
                                 <div>
-                                    <h2 className="text-lg font-semibold mb-2 text-white">{repo.name}</h2>
-                                    <p className="text-sm text-gray-400 line-clamp-3">
+                                    <h2 className="project-card-title">{repo.name}</h2>
+                                    <p className="project-card-description mt-2">
                                         {repo.description || "No description"}
                                     </p>
                                 </div>
 
-                                <div className="text-xs text-gray-400 mt-4 flex items-center gap-3">
+                                <div className="github-repos-detail-container">
                                     {repo.primaryLanguage && (
-                                        <span className="flex items-center gap-1">
+                                        <span className="flex-center gap-1">
                                             <span
-                                                className="w-2 h-2 rounded-full"
+                                                className="github-repos-dots"
                                                 style={{ backgroundColor: repo.primaryLanguage.color }}
                                             ></span>
                                             {repo.primaryLanguage.name}
                                         </span>
                                     )}
-                                    <div className="flex items-center">
+                                    <div className="flex-center">
                                         <VscStarEmpty />
-                                        <span className="ml-1">
+                                        <span className="github-repos-icon">
                                             {repo.stargazerCount}
                                         </span>
                                     </div>
 
-                                    <div className="flex items-center">
+                                    <div className="flex-center">
                                         <VscRepoForked />
-                                        <span className="ml-1">
+                                        <span className="github-repos-icon">
                                             {repo.forkCount}
                                         </span>
                                     </div>
@@ -142,7 +142,7 @@ export default function GithubSection() {
             </div>
 
             <>
-                <h2 className="font-bold text-lg">Contribution Activity</h2>
+                <h2 className="card-title">Contribution Activity</h2>
                 {isLoadingContributions ? (
                     <>
                         <div className="w-full h-26 my-2 animate-pulse bg-[#2e3440]"></div>

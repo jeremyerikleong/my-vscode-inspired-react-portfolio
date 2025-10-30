@@ -23,3 +23,173 @@ body {
   color: var(--foreground);
   font-family: var(--inter);
 }
+
+@layer utilities {
+  .layout-container {
+    @apply py-10 px-6 max-w-[900px] mx-auto font-mono text-gray-200;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .hero-title {
+    @apply text-4xl lg:text-5xl font-bold my-4;
+  }
+
+  .hero-subtitle-text {
+    @apply my-2 font-bold;
+  }
+
+  .subtitle-text {
+    @apply text-gray-400;
+  }
+
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 w-fit my-4 px-4 py-2 rounded-md font-medium transition duration-200 bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm;
+  }
+
+  .about-paragraph-container {
+    @apply mt-10;
+  }
+
+  .about-paragraph {
+    @apply my-4;
+  }
+
+  .section-title-container {
+    @apply text-center mb-10;
+  }
+
+  .section-title-h1 {
+    @apply text-3xl lg:text-4xl font-bold;
+  }
+
+  .section-title-h3 {
+    @apply font-medium mt-2 text-gray-500;
+  }
+
+  .card-container {
+    @apply bg-[#2e3440] border border-gray-600 p-6 rounded-md my-4;
+  }
+
+  .card-title {
+    @apply font-bold text-lg;
+  }
+
+  .card-company-name {
+    @apply text-blue-400;
+  }
+
+  .card-duration {
+    @apply text-xs my-1;
+  }
+
+  .card-content {
+    @apply text-sm my-4;
+  }
+
+  .card-tech-stack-list-container {
+    @apply text-xs flex flex-wrap gap-3;
+  }
+
+  .card-tech-stack-list {
+    @apply bg-gray-600 px-2 py-1 rounded-sm;
+  }
+
+  .card-grid {
+    @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .content-wrapper {
+    @apply my-10;
+  }
+
+  .project-card {
+    @apply flex flex-col gap-3 w-full bg-[#2e3440] border border-gray-600 hover:bg-[#2b313e] hover:border-gray-400 transition duration-300 rounded-md p-6;
+  }
+
+  .project-card-image-container {
+    @apply my-2 border border-gray-600 w-fit rounded-md p-2;
+  }
+
+  .project-card-title {
+    @apply text-lg font-semibold text-white;
+  }
+
+  .project-card-description {
+    @apply line-clamp-3 text-sm;
+  }
+
+  .skeleton-anim {
+    @apply w-full h-50 bg-[#2e3440] border border-gray-600 rounded-md animate-pulse;
+  }
+
+  .github-repos-detail-container {
+    @apply flex items-center text-xs text-gray-400 mt-4 gap-3;
+  }
+
+  .github-repos-dots {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .github-repos-icon {
+    @apply ml-1;
+  }
+
+  .vsc-editor-container {
+    @apply relative mt-10 rounded-md overflow-hidden border border-gray-700 shadow-lg;
+  }
+
+  .vsc-editor-topbar {
+    @apply flex items-center gap-2 px-3 py-2 bg-[#1f2430] border-b border-gray-700;
+  }
+
+  .vsc-editor-topbar-btn {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .vsc-editor-content-wrapper {
+    @apply flex bg-[#2e3440] max-h-[60vh] overflow-y-auto;
+  }
+
+  .vsc-editor-num-list {
+    @apply flex flex-col items-end px-3 py-4 bg-[#2a2f3a] text-gray-500 select-none;
+  }
+
+  .vsc-editor-export {
+    @apply text-purple-400;
+  }
+
+  .vsc-editor-variable {
+    @apply text-amber-300;
+  }
+
+  .vsc-editor-object-key {
+    @apply text-red-400;
+  }
+
+  .vsc-editor-value-link {
+    @apply text-green-500 hover:underline;
+  }
+
+  .vsc-editor-symbol {
+    @apply text-blue-400;
+  }
+
+  .vsc-editor-curly-braces {
+    @apply text-purple-400;
+  }
+
+  .tooltip-container {
+    @apply relative flex items-center overflow-visible;
+  }
+
+  .tooltip-content {
+    @apply absolute top-full right-0 mb-2 hidden bg-black shadow text-white text-sm px-2 py-1 rounded whitespace-nowrap z-99;
+  }
+
+  .footer-container {
+    @apply flex justify-between items-center bg-gray-700 w-full h-[25px] p-2 border-t border-t-gray-600;
+  }
+}

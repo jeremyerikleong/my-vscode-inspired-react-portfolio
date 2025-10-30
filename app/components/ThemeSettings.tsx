@@ -7,14 +7,14 @@ import Button from './Button';
 
 export default function ThemeSettings() {
     return (
-        <section className="py-10 px-6 max-w-[900px] mx-auto font-mono text-gray-200">
+        <section className="layout-container">
             <SectionTitle
                 title="Themes"
                 description1="You can change color theme in just one click." />
 
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="card-grid">
                 {themes.map(theme => (
-                    <li key={theme.theme_id} className="flex flex-col justify-center items-center my-2 p-6 rounded-md">
+                    <li key={theme.theme_id} className="flex-center flex-col my-2 p-6 rounded-md">
                         <Image
                             src={theme.theme_icon}
                             width={48}
@@ -26,7 +26,7 @@ export default function ThemeSettings() {
                                 {theme.theme_name}
                             </h2>
 
-                            <h3 className="font-medium text-gray-500 text-sm mb-2">
+                            <h3 className="section-title-h3 text-sm">
                                 {theme.theme_creator}
                             </h3>
                         </div>

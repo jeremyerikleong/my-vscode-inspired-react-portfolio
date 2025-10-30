@@ -4,31 +4,31 @@ import Button from './Button';
 
 export default function WorkExperienceSection() {
     return (
-        <section className="py-10 px-6 max-w-[900px] mx-auto font-mono text-gray-200">
+        <section className="layout-container">
             <SectionTitle
                 title="Work Experience" />
 
             {workExperiences && workExperiences.map(workExperience => (
-                <div key={workExperience.id} className="bg-[#2e3440] p-4 rounded-md my-4">
-                    <h2 className="font-bold text-lg">
+                <div key={workExperience.id} className="card-container">
+                    <h2 className="card-title">
                         {workExperience.position_title}
                     </h2>
                     <a href={`${workExperience.company_website}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-400">
+                        className="card-company-name">
                         {workExperience.company_name}
                     </a>
-                    <p className="text-xs my-1">
+                    <p className="card-duration">
                         {workExperience.position_duration}
                     </p>
-                    <p className="text-sm my-4">
+                    <p className="card-content">
                         {workExperience.experience_content}
                     </p>
-                    <ul className="text-xs flex flex-wrap gap-3">
+                    <ul className="card-tech-stack-list-container">
                         {workExperience.experience_tech_stacks.map((tech_stack, index) => (
                             <li key={`${workExperience.id}TechStack${index}`}
-                                className="bg-gray-600 px-2 py-1 rounded-sm">
+                                className="card-tech-stack-list">
                                 {tech_stack}
                             </li>
                         ))}
@@ -36,7 +36,7 @@ export default function WorkExperienceSection() {
                 </div>
             ))}
 
-            <div className="flex justify-center my-6">
+            <div className="flex-center">
                 <Button
                     title="View Full Resume"
                     href="https://cv.jeremyerikleong.com/"

@@ -10,15 +10,15 @@ export async function generateMetadata() {
 
 export default function Hero() {
     return (
-        <section className="flex flex-col py-10 px-6 max-w-[900px] mx-auto font-mono">
+        <section className="flex flex-col layout-container">
             <div>
-                <h3 className="text-gray-400">Hi there! My name is</h3>
-                <h1 className="text-4xl lg:text-5xl font-bold my-4">{developerInfo.name}</h1>
-                <h2 className="my-2 font-bold">{developerInfo.title}</h2>
-                <p className="text-gray-400">{developerInfo.bio}</p>
+                <h3 className="subtitle-text">Hi there! My name is</h3>
+                <h1 className="hero-title">{developerInfo.name}</h1>
+                <h2 className="hero-subtitle-text">{developerInfo.title}</h2>
+                <p className="subtitle-text">{developerInfo.bio}</p>
             </div>
 
-            <Button title="View Projects" href="./projects" className="w-fit my-6" />
+            <Button title="View Projects" href="./projects" />
         </section>
     )
 }

@@ -9,21 +9,21 @@ export async function generateMetadata() {
 
 export default function Contact() {
     return (
-        <section className="py-10 px-6 max-w-[900px] mx-auto font-mono text-gray-200">
+        <section className="layout-container">
             <SectionTitle
                 title="Get In Touch"
                 description1="Have an exciting project we could work on together?"
                 description2="Feel free to reach out to me through any of the social platforms below. I’m always open to new opportunities and connections." />
 
-            <div className="relative mt-10 rounded-md overflow-hidden border border-gray-700 shadow-lg">
-                <div className="flex items-center gap-2 px-3 py-2 bg-[#1f2430] border-b border-gray-700">
-                    <span className="w-3 h-3 rounded-full bg-red-400"></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-400 "></span>
-                    <span className="w-3 h-3 rounded-full bg-green-500"></span>
+            <div className="vsc-editor-container">
+                <div className="vsc-editor-topbar">
+                    <span className="vsc-editor-topbar-btn bg-red-400"></span>
+                    <span className="vsc-editor-topbar-btn bg-yellow-400 "></span>
+                    <span className="vsc-editor-topbar-btn bg-green-500"></span>
                 </div>
 
-                <div className="flex bg-[#2e3440] max-h-[60vh] overflow-y-auto">
-                    <div className="flex flex-col items-end px-3 py-4 bg-[#2a2f3a] text-gray-500 select-none">
+                <div className="vsc-editor-content-wrapper">
+                    <div className="vsc-editor-num-list">
                         <span>1</span>
                         {socialCardDetails.map((_, index) => (
                             <span key={index} className="mt-px">{index + 2}</span>
@@ -33,21 +33,21 @@ export default function Contact() {
 
                     <div className="px-4 py-4 overflow-y-auto">
                         <p>
-                            <span className="text-purple-400">export const </span>
-                            <span className="text-amber-300">socials</span>
-                            <span className="text-blue-400"> = </span>
-                            <span className="text-purple-400">{"{"}</span>
+                            <span className="vsc-editor-export">export const </span>
+                            <span className="vsc-editor-variable">socials</span>
+                            <span className="vsc-editor-symbol"> = </span>
+                            <span className="vsc-editor-curly-braces">{"{"}</span>
                         </p>
 
                         <ul className="mt-1">
                             {socialCardDetails.map((social) => (
                                 <li key={social.id} className="ml-6 break-all">
-                                    <span className="text-red-400">{social.platform}: </span>
+                                    <span className="vsc-editor-object-key">{social.platform}: </span>
                                     <a
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-green-500 hover:underline"
+                                        className="vsc-editor-value-link"
                                     >
                                         {'"'}{social.title}{'"'}
                                     </a>
@@ -56,7 +56,7 @@ export default function Contact() {
                             ))}
                         </ul>
 
-                        <p className="text-purple-400">{"}"}</p>
+                        <p className="vsc-editor-curly-braces">{"}"}</p>
                     </div>
                 </div>
             </div>

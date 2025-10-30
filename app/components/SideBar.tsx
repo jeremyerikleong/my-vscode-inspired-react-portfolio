@@ -30,7 +30,7 @@ export default function SideBar() {
                 key={`buttonLink${id}`}
                 className={`border-l-2 ${isActive ? 'border-white' : 'border-transparent'}`}>
                 <Link href={href}
-                    className="flex items-center px-3 py-4 cursor-pointer">
+                    className="flex-center px-3 py-4 cursor-pointer">
                     <Icon size={ICON_SIZE} color={isActive ? ICON_ACTIVE_COLORS : ICON_DEFAULT_COLORS} />
                 </Link>
             </li>

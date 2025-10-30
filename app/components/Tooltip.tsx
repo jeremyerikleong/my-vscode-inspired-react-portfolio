@@ -7,9 +7,9 @@ interface TooltipProps {
 
 export default function Tooltip({ text, children }: TooltipProps) {
     return (
-        <div className="relative group flex items-center overflow-visible">
+        <div className="tooltip-container group">
             {children}
-            <span className="absolute top-full right-0 mb-2 hidden group-hover:block bg-black shadow text-white text-sm px-2 py-1 rounded whitespace-nowrap z-99">
+            <span className="tooltip-content group-hover:block">
                 {text}
             </span>
         </div>

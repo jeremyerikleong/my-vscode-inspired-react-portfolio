@@ -9,18 +9,18 @@ export async function generateMetadata() {
 
 export default function Projects() {
     return (
-        <section className="py-10 px-6 max-w-[900px] font-mono mx-auto">
+        <section className="layout-container">
             <div className="text-center">
-                <h1 className="text-3xl lg:text-4xl font-bold">My Projects</h1>
-                <h3 className="font-medium my-3">Here&apos;s a selection of my creations for brushing up my skills. For more stuff, kindly check out my <a className="text-blue-400" href="https://github.com/jeremyerikleong" target="_blank">repositories</a>.</h3>
+                <h1 className="section-title-h1">My Projects</h1>
+                <h3 className="section-title-h3">Here&apos;s a selection of my creations for brushing up my skills. For more stuff, kindly check out my <a className="text-blue-400" href="https://github.com/jeremyerikleong" target="_blank">repositories</a>.</h3>
             </div>
 
-            <div className="mt-10">
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="content-wrapper">
+                <div className="card-grid">
                     {myProjects && myProjects.map(project => (
-                        <a key={project.id} href={project.url} target="_blank" className="h-full">
-                            <div className="flex flex-col gap-4 w-full bg-[#2e3440] border border-gray-600 hover:bg-[#2b313e] hover:border-gray-400 transition duration-300 rounded-md p-6">
-                                <div className="my-2 border border-gray-600 w-fit rounded-md p-2">
+                        <a key={project.id} href={project.url} target="_blank">
+                            <div className="project-card">
+                                <div className="project-card-image-container">
                                     <Image
                                         src={project.icon}
                                         width={32}
@@ -28,17 +28,17 @@ export default function Projects() {
                                         alt="project icon"
                                     />
                                 </div>
-                                <h2 className="font-bold">
+                                <h2 className="project-card-title">
                                     {project.title}
                                 </h2>
-                                <p className="line-clamp-3 text-sm">
+                                <p className="project-card-description">
                                     {project.description}
                                 </p>
 
-                                <ul className="text-xs flex flex-wrap gap-3">
+                                <ul className="card-tech-stack-list-container">
                                     {project.tech_stacks.map((tech_stack, index) => (
                                         <li key={`${project.title}${tech_stack}${index}`}
-                                            className="bg-gray-600 px-2 py-1 rounded-sm">
+                                            className="card-tech-stack-list">
                                             {tech_stack}
                                         </li>
                                     ))}

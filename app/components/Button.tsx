@@ -12,8 +12,7 @@ interface ButtonProps {
 }
 
 export default function Button({ title, href, external = false, onClick, className = '', children }: ButtonProps) {
-    const baseClasses =
-        'inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md font-medium transition duration-200 bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm';
+    const baseClasses = 'btn-base';
 
     if (href && external) {
         return (
