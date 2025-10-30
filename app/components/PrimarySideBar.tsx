@@ -74,8 +74,8 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
         <div style={{ width }}
             className="relative flex flex-row border-r border-gray-600 bg-gray-700 select-none">
 
-            <div className="flex flex-col">
-                <h3 className="uppercase text-xs font-medium px-3 pt-2 mb-3">
+            <div className="p-2 overflow-auto w-full">
+                <h3 className="uppercase text-xs font-medium px-3 mb-1">
                     Explorer
                 </h3>
                 <div>{files.map(file => (

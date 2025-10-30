@@ -17,8 +17,8 @@ export default function FileTreeStructure({ item, level, onSelect, onToggle, sel
         <div className="flex flex-col">
             <div
                 onClick={() => item.type === "folder" ? onToggle(item) : onSelect(item)}
-                style={{ paddingLeft: `${level * 3}em` }}
-                className={`flex items-center gap-2 py-1 px-2 cursor-pointer rounded-sm ${isSelected ? 'bg-gray-600 text-white' : 'text-gray-300 hover:bg-gray-600'
+                style={{ paddingLeft: `${level * 1.5}em` }}
+                className={`flex items-center py-1 px-2 cursor-pointer rounded-sm ${isSelected ? 'bg-gray-600 text-white' : 'text-gray-300 hover:bg-gray-600'
                     }`}
             >
                 {item.type === "folder" && (
@@ -28,11 +28,11 @@ export default function FileTreeStructure({ item, level, onSelect, onToggle, sel
                 )}
 
                 {item.type === "folder" ? (
-                    item.isOpened ? <VscFolderOpened color="yellow" /> : <VscFolder color="yellow" />
+                    item.isOpened ? <span className="mx-2"><VscFolderOpened color="yellow" /></span> : <span className="mx-2"><VscFolder color="yellow" /></span>
                 ) : (
-                    item.language === "typescript" ? <FaReact color="lightblue" /> : <VscFile />
+                    item.language === "typescript" ? <span className="ml-6 mr-2"><FaReact color="lightblue" /></span> : <span className="ml-6 mr-2"><VscFile /></span>
                 )}
-                <span>{item.name}</span>
+                <h3 className="truncate">{item.name}</h3>
             </div>
 
             {item.type === "folder" && item.isOpened && item.children && (
