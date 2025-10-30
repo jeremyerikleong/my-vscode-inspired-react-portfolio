@@ -8,7 +8,7 @@ interface PrimarySideBarProps {
 }
 
 export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
-    const [files, setFiles] = useState<FileStructureProps[]>(getFileStructures(activeTab));
+    const [files, setFiles] = useState<FileStructureProps[]>([]);
     const [selectedFile, setSelectedFile] = useState<FileStructureProps | null>(null);
     const [width, setWidth] = useState(200);
     const [isResizing, setIsResizing] = useState(false);
@@ -48,26 +48,44 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
         setIsResizing(false);
     }
 
-    function handleHoverDragToResize(evt: MouseEvent) {
+    function handleHoverDragToResize(clientX: number) {
+        const newWidth = Math.min(Math.max(clientX, 160), 400);
+        setWidth(newWidth);
+    }
+
+    function handleMouseToMove(evt: MouseEvent) {
         if (isResizing) {
-            const newWidth = Math.min(Math.max(evt.clientX, 160), 400);
-            setWidth(newWidth);
+            handleHoverDragToResize(evt.clientX);
+        }
+    }
+
+    function handleTouchToMove(evt: TouchEvent) {
+        if (isResizing && evt.touches[0]) {
+            handleHoverDragToResize(evt.touches[0].clientX);
         }
     }
 
     useEffect(() => {
         if (isResizing) {
-            document.addEventListener('mousemove', handleHoverDragToResize);
+            document.addEventListener('mousemove', handleMouseToMove);
             document.addEventListener('mouseup', stopResize);
+
+            document.addEventListener('touchmove', handleTouchToMove);
+            document.addEventListener('touchend', stopResize);
         } else {
-            document.removeEventListener('mousemove', handleHoverDragToResize);
+            document.removeEventListener('mousemove', handleMouseToMove);
             document.removeEventListener('mouseup', stopResize);
+
+            document.addEventListener('touchmove', handleTouchToMove);
+            document.addEventListener('touchend', stopResize);
         }
         return () => {
-            document.removeEventListener('mousemove', handleHoverDragToResize);
+            document.removeEventListener('mousemove', handleMouseToMove);
             document.removeEventListener('mouseup', stopResize);
-        };
 
+            document.addEventListener('touchmove', handleTouchToMove);
+            document.addEventListener('touchend', stopResize);
+        };
     }, [isResizing]);
 
     return (
@@ -92,6 +110,7 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
             <div
                 className={`absolute right-0 w-1 h-full cursor-col-resize hover:bg-gray-600 ${isResizing ? 'bg-gray-500' : ''}`}
                 onMouseDown={startResize}
+                onTouchStart={startResize}
             />
         </div>
     )
