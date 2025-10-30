@@ -3,51 +3,120 @@ export interface FileStructureProps {
     name: string;
     type: 'file' | 'folder';
     children?: FileStructureProps[];
+    root?: boolean;
+    color?: string;
     content?: string;
     language?: string;
     isOpened?: boolean;
 }
 
+const rootFolder = "#FF746C";
+const componentFolder = "#FFBF00";
+
 export const HomeFiles: FileStructureProps[] = [
     {
-        name: "components",
+        name: "app",
         type: "folder",
         isOpened: true,
+        root: true,
+        color: rootFolder,
         children: [
             {
-                name: "Hero.tsx",
+                name: "components",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "Hero.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                    {
+                        name: "Button.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
+            },
+            {
+                name: "constants",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "index.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
+            },
+            {
+                name: "page.tsx",
                 type: "file",
                 language: "typescript"
             },
-            {
-                name: "Button.tsx",
-                type: "file",
-                language: "typescript"
-            }
         ]
     }
 ]
 
 export const WorkExperienceFiles: FileStructureProps[] = [
     {
-        name: "components",
+        name: "app",
         type: "folder",
         isOpened: true,
+        root: true,
+        color: rootFolder,
         children: [
             {
-                name: "SectionTitle.tsx",
-                type: "file",
-                language: "typescript"
+                name: "components",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "SectionTitle.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                    {
+                        name: "WorkExperienceSection.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                    {
+                        name: "Button.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
             },
             {
-                name: "WorkExperienceSection.tsx",
-                type: "file",
-                language: "typescript"
+                name: "experience",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "page.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
             },
             {
-                name: "Button.tsx",
-                type: "file",
-                language: "typescript"
+                name: "constants",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "index.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
             }
         ]
     }
@@ -55,14 +124,37 @@ export const WorkExperienceFiles: FileStructureProps[] = [
 
 export const ProjectFiles: FileStructureProps[] = [
     {
-        name: "projects",
+        name: "app",
         type: "folder",
         isOpened: true,
+        root: true,
+        color: rootFolder,
         children: [
             {
-                name: "page.tsx",
-                type: "file",
-                language: "typescript"
+                name: "projects",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "page.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
+            },
+            {
+                name: "constants",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "index.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
             }
         ]
     }
@@ -70,101 +162,250 @@ export const ProjectFiles: FileStructureProps[] = [
 
 export const GithubFiles: FileStructureProps[] = [
     {
-        name: "components",
+        name: "app",
         type: "folder",
         isOpened: true,
+        root: true,
+        color: rootFolder,
         children: [
             {
-                name: "SectionTitle.tsx",
-                type: "file",
-                language: "typescript"
+                name: "api",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "github",
+                        type: "folder",
+                        isOpened: true,
+                        color: componentFolder,
+                        children: [
+                            {
+                                name: "pinned",
+                                type: "folder",
+                                isOpened: true,
+                                color: componentFolder,
+                                children: [
+                                    {
+                                        name: "route.ts",
+                                        type: "file",
+                                        language: "typescript"
+                                    }
+                                ]
+                            },
+                            {
+                                name: "contributions",
+                                type: "folder",
+                                isOpened: true,
+                                color: componentFolder,
+                                children: [
+                                    {
+                                        name: "route.ts",
+                                        type: "file",
+                                        language: "typescript"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
-                name: "GithubSection.tsx",
-                type: "file",
-                language: "typescript"
+                name: "components",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "SectionTitle.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                    {
+                        name: "GithubSection.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
             },
+            {
+                name: "github",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "page.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
+            },
+            {
+                name: "constants",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "index.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
+            }
         ]
     }
 ]
 
 export const ContactFiles: FileStructureProps[] = [
     {
-        name: "components",
+        name: "app",
         type: "folder",
         isOpened: true,
+        root: true,
+        color: rootFolder,
         children: [
             {
-                name: "SectionTitle.tsx",
-                type: "file",
-                language: "typescript"
-            }
-        ]
-    },
-    {
-        name: "contact",
-        type: "folder",
-        isOpened: true,
-        children: [
+                name: "components",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "SectionTitle.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
+            },
             {
-                name: "page.tsx",
-                type: "file",
-                language: "typescript"
+                name: "contact",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "page.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
+            },
+            {
+                name: "constants",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "index.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
             }
         ]
-    },
+    }
 ]
 
 export const AboutFiles: FileStructureProps[] = [
     {
-        name: "components",
+        name: "app",
         type: "folder",
         isOpened: true,
+        root: true,
+        color: rootFolder,
         children: [
             {
-                name: "SectionTitle.tsx",
-                type: "file",
-                language: "typescript"
-            }
-        ]
-    },
-    {
-        name: "about",
-        type: "folder",
-        isOpened: true,
-        children: [
+                name: "components",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "SectionTitle.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
+            },
             {
-                name: "page.tsx",
-                type: "file",
-                language: "typescript"
+                name: "about",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "page.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
+            },
+            {
+                name: "constants",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "index.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
             }
         ]
-    },
+    }
 ]
 
 export const SettingsFiles: FileStructureProps[] = [
     {
-        name: "components",
+        name: "app",
         type: "folder",
         isOpened: true,
+        root: true,
+        color: rootFolder,
         children: [
             {
-                name: "SectionTitle.tsx",
-                type: "file",
-                language: "typescript"
+                name: "components",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "SectionTitle.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                    {
+                        name: "ThemeSettings.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                    {
+                        name: "Button.tsx",
+                        type: "file",
+                        language: "typescript"
+                    }
+                ]
             },
             {
-                name: "ThemeSettings.tsx",
-                type: "file",
-                language: "typescript"
-            },
-            {
-                name: "Button.tsx",
-                type: "file",
-                language: "typescript"
+                name: "constants",
+                type: "folder",
+                isOpened: true,
+                color: componentFolder,
+                children: [
+                    {
+                        name: "index.tsx",
+                        type: "file",
+                        language: "typescript"
+                    },
+                ]
             }
         ]
-    },
+    }
 ]
 
 export function getFileStructures(activeTab: string): FileStructureProps[] {
@@ -179,7 +420,7 @@ export function getFileStructures(activeTab: string): FileStructureProps[] {
             return GithubFiles;
         case "/contact":
             return ContactFiles;
-        case "settings":
+        case "/settings":
             return SettingsFiles;
         default:
             return HomeFiles;

@@ -1,6 +1,7 @@
 import { FileStructureProps } from '@/constants/files';
-import { VscFile, VscFolder, VscFolderOpened, VscChevronDown, VscChevronRight } from "react-icons/vsc";
-import { FaReact } from "react-icons/fa";
+import { VscFile, VscChevronDown, VscChevronRight } from "react-icons/vsc";
+import { FaFolder, FaFolderOpen, FaReact } from 'react-icons/fa';
+import Image from 'next/image';
 
 interface FileTreeProps {
     item: FileStructureProps;
@@ -28,9 +29,12 @@ export default function FileTreeStructure({ item, level, onSelect, onToggle, sel
                 )}
 
                 {item.type === "folder" ? (
-                    item.isOpened ? <span className="mx-2"><VscFolderOpened color="yellow" /></span> : <span className="mx-2"><VscFolder color="yellow" /></span>
+                    item.isOpened ? <span className="mx-2"><FaFolderOpen color={item.color} /></span> : <span className="mx-2"><FaFolder color={item.color} /></span>
                 ) : (
-                    item.language === "typescript" ? <span className="ml-6 mr-2"><FaReact color="lightblue" /></span> : <span className="ml-6 mr-2"><VscFile /></span>
+                    item.language === "typescript" ?
+                        (item.name === "route.ts" ? <span className="ml-6 mr-2"><Image src="/routes.png" width={18} height={18} alt="icon" className="min-w-[18px] min-h-[18px] w-[18px] h-[18px] flex-shrink-0" /></span>
+                            : <span className="ml-6 mr-2"><FaReact color="lightblue" /></span>)
+                        : <span className="ml-6 mr-2"><VscFile /></span>
                 )}
                 <h3 className="truncate">{item.name}</h3>
             </div>
