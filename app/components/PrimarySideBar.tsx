@@ -90,10 +90,10 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
 
     return (
         <div style={{ width }}
-            className="relative flex flex-row border-r border-gray-600 bg-gray-700 select-none">
+            className="primary-sidebar-container">
 
-            <div className="p-2 overflow-auto w-full">
-                <h3 className="uppercase text-xs font-medium px-3 mb-1">
+            <div className="file-structure-column">
+                <h3 className="primary-sidebar-title">
                     Explorer
                 </h3>
                 <div>{files.map(file => (
@@ -108,7 +108,7 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
             </div>
 
             <div
-                className={`absolute right-0 w-1 h-full cursor-col-resize hover:bg-gray-600 ${isResizing ? 'bg-gray-500' : ''}`}
+                className={`primary-sidebar-draggable-border ${isResizing ? 'bg-gray-500' : ''}`}
                 onMouseDown={startResize}
                 onTouchStart={startResize}
             />

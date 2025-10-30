@@ -39,12 +39,12 @@ export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar, sho
     });
 
     return (
-        <section className="flex items-center justify-between w-full p-2 overflow-visible bg-gray-800">
+        <section className="titlebar-container">
             <div>
-                <div className="flex gap-2">
-                    <span className="w-3 h-3 rounded-full bg-red-400"></span>
-                    <span className="w-3 h-3 rounded-full bg-amber-400"></span>
-                    <span className="w-3 h-3 rounded-full bg-green-600"></span>
+                <div className="titlebar-gap">
+                    <span className="btn-close"></span>
+                    <span className="btn-minimize"></span>
+                    <span className="btn-maximize"></span>
                 </div>
             </div>
 
@@ -52,8 +52,8 @@ export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar, sho
                 {`${developerInfo.name} - Visual Studio Code`}
             </p>
 
-            <ul className="flex gap-2">
-                <li className="cursor-pointer" onClick={togglePrimarySideBar}>
+            <ul className="titlebar-gap">
+                <li className="titlebar-list" onClick={togglePrimarySideBar}>
                     {showPrimarySideBar ?
                         (<Tooltip text={titleBarIconToolTip.primarySideBar}>
                             <VscLayoutSidebarLeft size={ICON_SIZE} />
@@ -63,7 +63,7 @@ export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar, sho
                         </Tooltip>)}
                 </li>
 
-                <li className="cursor-pointer" onClick={togglePanel}>
+                <li className="titlebar-list" onClick={togglePanel}>
                     {showPanel ?
                         (<Tooltip text={titleBarIconToolTip.panel}>
                             <VscLayoutPanel size={ICON_SIZE} />
@@ -73,7 +73,7 @@ export default function TitleBar({ showPrimarySideBar, togglePrimarySideBar, sho
                         </Tooltip>)}
                 </li>
 
-                <li className="cursor-pointer" onClick={toggleSecondarySideBar}>
+                <li className="titlebar-list" onClick={toggleSecondarySideBar}>
                     {showSecondarySideBar ?
                         <Tooltip text={titleBarIconToolTip.secondarySideBar}>
                             <VscLayoutSidebarRight size={ICON_SIZE} />

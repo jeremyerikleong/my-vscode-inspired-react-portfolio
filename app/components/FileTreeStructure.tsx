@@ -32,9 +32,9 @@ export default function FileTreeStructure({ item, level, onSelect, onToggle, sel
                     item.isOpened ? <span className="mx-2"><FaFolderOpen color={item.color} /></span> : <span className="mx-2"><FaFolder color={item.color} /></span>
                 ) : (
                     item.language === "typescript" ?
-                        (item.name === "route.ts" ? <span className="ml-6 mr-2"><Image src="/routes.png" width={18} height={18} alt="icon" className="min-w-[18px] min-h-[18px] w-[18px] h-[18px] flex-shrink-0" /></span>
-                            : <span className="ml-6 mr-2"><FaReact color="lightblue" /></span>)
-                        : <span className="ml-6 mr-2"><VscFile /></span>
+                        (item.name === "route.ts" ? <span className="file-tree-structure-icon-container"><Image src="/routes.png" width={18} height={18} alt="icon" className="file-tree-structure-icon" /></span>
+                            : <span className="file-tree-structure-icon-container"><FaReact color="lightblue" /></span>)
+                        : <span className="file-tree-structure-icon-container"><VscFile /></span>
                 )}
                 <h3 className="truncate">{item.name}</h3>
             </div>

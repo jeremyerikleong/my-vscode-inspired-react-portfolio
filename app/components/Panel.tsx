@@ -9,7 +9,7 @@ interface PanelProps {
 
 function Terminal() {
     return (
-        <p className="text-[#7FFFD4] flex items-center font-bold">
+        <p className="terminal-git-lines">
             <span className="mr-3">
                 <VscArrowSmallRight size={18} color={'green'} />
             </span>
@@ -38,9 +38,9 @@ export default function Panel({ showPanel, onClose }: PanelProps) {
     ]
 
     return (
-        <div className={`absolute bottom-0 left-0 right-0 transition-transform duration-300 ${showPanel ? 'translate-y-0' : 'translate-y-full'} bg-gray-700 p-4 border-t border-gray-500 z-50 h-50`}>
+        <div className={`absolute bottom-0 left-0 right-0 transition-transform duration-300 ${showPanel ? 'translate-y-0' : 'translate-y-full'} bg-gray-700 px-4 border-t border-gray-500 z-50 h-50`}>
             <div className="flex items-center justify-between">
-                <ul className="flex items-center">
+                <ul className="flex-center">
                     {panels.map((panel) => (
                         <li
                             key={panel.id}
@@ -63,7 +63,7 @@ export default function Panel({ showPanel, onClose }: PanelProps) {
                 </Button>
             </div>
 
-            <div className="mt-3 mx-2 text-sm text-gray-200 font-medium">
+            <div className="terminal-text">
                 {activePanel === "problems" && <p>No problems have been detected in the workspace.</p>}
                 {activePanel === "output" && <p>Build output will appear here.</p>}
                 {activePanel === "terminal" && <Terminal />}
