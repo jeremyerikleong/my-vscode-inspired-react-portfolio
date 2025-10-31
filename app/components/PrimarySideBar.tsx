@@ -20,6 +20,21 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
         });
     }, [activeTab]);
 
+    useLayoutEffect(() => {
+        const storedWidth = localStorage.getItem('primarySideBar');
+
+        if (storedWidth) {
+            const parseStoredWidth = parseInt(storedWidth, 10);
+            if (!isNaN(parseStoredWidth)) {
+                setWidth(parseStoredWidth);
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('primarySideBar', width.toString());
+    }, [width]);
+
     function handleFileSelect(file: FileStructureProps) {
         setSelectedFile(file);
     }
