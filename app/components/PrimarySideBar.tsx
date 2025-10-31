@@ -20,7 +20,7 @@ export default function PrimarySideBar({ activeTab }: PrimarySideBarProps) {
         });
     }, [activeTab]);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const storedWidth = localStorage.getItem('primarySideBar');
 
         if (storedWidth) {
