@@ -86,7 +86,7 @@ export default function GithubSection() {
             />
 
             <div className="content-wrapper">
-                <h2 className="card-title">Pinned</h2>
+                <h2 className="card-title my-2">Pinned</h2>
 
                 {isLoadingPinnedRepos ? (
                     <div className="card-grid">

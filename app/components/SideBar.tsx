@@ -5,8 +5,6 @@ import type { IconType } from 'react-icons';
 
 export default function SideBar() {
     const ICON_SIZE = 24;
-    const ICON_DEFAULT_COLORS = '#a7a7a7';
-    const ICON_ACTIVE_COLORS = '#fff';
     const pathname = usePathname();
 
     const topLinks = [
@@ -28,17 +26,17 @@ export default function SideBar() {
         return (
             <li
                 key={`buttonLink${id}`}
-                className={`border-l-2 ${isActive ? 'border-white' : 'border-transparent'}`}>
+                className={`border-l-2 ${isActive ? 'border-[var(--accent)]' : 'border-transparent'}`}>
                 <Link href={href}
                     className="flex-center px-3 py-4 cursor-pointer">
-                    <Icon size={ICON_SIZE} color={isActive ? ICON_ACTIVE_COLORS : ICON_DEFAULT_COLORS} />
+                    <Icon size={ICON_SIZE} color={isActive ? 'var(--accent)' : 'var(--accent-default)'} />
                 </Link>
             </li>
         )
     }
 
     return (
-        <aside className="flex flex-col items-center justify-between min-h-[calc(100vh-60px)] w-fit py-4 bg-gray-800">
+        <aside className="flex flex-col items-center justify-between min-h-[calc(100vh-60px)] w-fit py-4 bg-[var-(sidebar)] border-r border-r-gray-600">
             <ul>
                 {topLinks.map((link) => renderButton(link.id, link.href, link.icon))}
             </ul>

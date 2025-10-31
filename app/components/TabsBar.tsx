@@ -21,7 +21,7 @@ export default function TabsBar() {
             {tabs.map((tab) => (
                 <Link key={tab.id} href={tab.path}>
                     <li
-                        className={`flex-center tabs-list ${pathname === tab.path ? 'bg-[#3b4252] border-t border-t-gray-400' : 'bg-transparent border-t border-t-transparent'}`}
+                        className={`flex-center tabs-list ${pathname === tab.path ? 'bg-[#3b4252] border-t border-t-[var(--accent)]' : 'bg-transparent border-t border-t-transparent'}`}
                     >
                         <Image src={tab.icon}
                             width={16}

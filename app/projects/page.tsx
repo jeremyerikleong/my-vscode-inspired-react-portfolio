@@ -12,7 +12,7 @@ export default function Projects() {
         <section className="layout-container">
             <div className="text-center">
                 <h1 className="section-title-h1">My Projects</h1>
-                <h3 className="section-title-h3">Here&apos;s a selection of my creations for brushing up my skills. For more stuff, kindly check out my <a className="text-blue-400" href="https://github.com/jeremyerikleong" target="_blank">repositories</a>.</h3>
+                <h3 className="section-title-h3">Here&apos;s a selection of my creations for brushing up my skills. For more stuff, kindly check out my <a className="text-[var(--accent)]" href="https://github.com/jeremyerikleong" target="_blank">repositories</a>.</h3>
             </div>
 
             <div className="content-wrapper">

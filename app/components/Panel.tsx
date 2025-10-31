@@ -16,8 +16,8 @@ function Terminal() {
 
             my-vscode-inspired-react-portfolio
 
-            <p className="text-sky-500 mx-2">
-                git:(<span className="text-red-500">main</span>)
+            <p className="text-gray-400 mx-2">
+                git:(<span className="text-gray-400">main</span>)
             </p>
 
             <span>
@@ -38,7 +38,7 @@ export default function Panel({ showPanel, onClose }: PanelProps) {
     ]
 
     return (
-        <div className={`absolute bottom-0 left-0 right-0 transition-transform duration-300 ${showPanel ? 'translate-y-0' : 'translate-y-full'} bg-gray-700 px-4 border-t border-gray-500 z-50 h-50`}>
+        <div className={`absolute bottom-0 left-0 right-0 transition-transform duration-300 ${showPanel ? 'translate-y-0' : 'translate-y-full'} bg-[var(--primarybar)] p-4 border-t border-t-gray-600 z-50 h-50`}>
             <div className="flex items-center justify-between">
                 <ul className="flex-center">
                     {panels.map((panel) => (
@@ -54,16 +54,13 @@ export default function Panel({ showPanel, onClose }: PanelProps) {
                     ))}
                 </ul>
 
-                <Button
-                    title=""
-                    onClick={onClose}
-                    className="cursor-pointer text-gray-400 hover:bg-transparent hover:text-white transition"
-                >
+                <div className="cursor-pointer text-gray-400 hover:bg-transparent hover:text-white transition"
+                    onClick={onClose}>
                     <VscChromeClose size={ICON_SIZES} />
-                </Button>
+                </div>
             </div>
 
-            <div className="terminal-text">
+            <div className="terminal-text mt-4">
                 {activePanel === "problems" && <p>No problems have been detected in the workspace.</p>}
                 {activePanel === "output" && <p>Build output will appear here.</p>}
                 {activePanel === "terminal" && <Terminal />}

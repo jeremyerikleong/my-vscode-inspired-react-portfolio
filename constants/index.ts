@@ -103,19 +103,22 @@ export const myProjects = [
 export const themes = [
     {
         theme_id: '1',
-        theme_name: 'One Dark Pro',
+        theme_name: 'one-dark-pro',
+        theme_name_display: 'One Dark Pro',
         theme_icon: '/themes/one-dark-pro.png',
         theme_creator: 'Binaryify',
     },
     {
         theme_id: '2',
-        theme_name: 'Dracula',
+        theme_name: 'dracula',
+        theme_name_display: 'Dracula',
         theme_icon: '/themes/dracula.png',
         theme_creator: 'Dracula Theme',
     },
     {
         theme_id: '3',
-        theme_name: 'Cyberpunk Light Aquamarine Theme',
+        theme_name: 'cyberpunk-light-aquamarine',
+        theme_name_display: 'Cyberpunk Light Aquamarine Theme',
         theme_icon: '/themes/cyberpunk-aquamarine.png',
         theme_creator: 'Jeremy Erik Leong',
     },
