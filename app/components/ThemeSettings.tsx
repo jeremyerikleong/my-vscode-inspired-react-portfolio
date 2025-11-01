@@ -4,26 +4,10 @@ import SectionTitle from '../components/SectionTitle';
 import { themes } from '@/constants';
 import Image from 'next/image';
 import Button from './Button';
-import { useState, useEffect } from 'react';
+import { useTheme } from '@/app/providers/ThemeProvider';
 
 export default function ThemeSettings() {
-    const [currentTheme, setCurrentTheme] = useState<string>(() => {
-        if (typeof window !== "undefined") {
-            return localStorage.getItem("theme") || "one-dark-pro";
-        }
-        return "one-dark-pro";
-    });
-
-    useEffect(() => {
-        document.body.classList.remove(...Array.from(document.body.classList).filter(classList => classList.startsWith('theme-')));
-        document.body.classList.add(`theme-${currentTheme}`);
-        localStorage.setItem("theme", currentTheme);
-    }, [currentTheme]);
-
-
-    function handleSwitchTheme(theme: string) {
-        setCurrentTheme(theme);
-    }
+    const { theme: currentTheme, setTheme } = useTheme();
 
     return (
         <section className="layout-container">
@@ -57,7 +41,7 @@ export default function ThemeSettings() {
                                 </div> :
                                 <Button
                                     title="Set Color Theme"
-                                    onClick={() => handleSwitchTheme(theme.theme_name)}
+                                    onClick={() => setTheme(theme.theme_name)}
                                 />
                         }
 
