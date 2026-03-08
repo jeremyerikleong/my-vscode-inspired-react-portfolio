@@ -86,7 +86,7 @@ export const myProjects = [
         id: '5',
         title: 'The Boring Devs',
         description: 'A client website developed using Next.js framework.',
-        url: 'https://www.theboringdevs.com',
+        url: 'https://theboringdevs.netlify.app/',
         icon: '/projects/tbd.webp',
         tech_stacks: ['Next.js', 'Tailwind CSS', 'Vercel'],
     },
